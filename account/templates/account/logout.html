@@ -1,0 +1,7 @@
+{% extends "account/base.html" %}
+{% block title %}Logout{% endblock %}
+{% block content %}
+   {% if user.is_authenticated %}
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+    {% endif %}
+{% endblock %}

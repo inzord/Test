@@ -1,0 +1,12 @@
+{% extends "account/base.html" %}
+{% block title %}Personal account{% endblock %}
+{% block content %}
+    <h1>Personal account</h1>
+    <h1>Info</h1>
+    <form action="http://127.0.0.1:8000/link_shortening/">
+        <input type="submit" value="link shortening" />
+    </form>
+    <h1>History</h1>
+    <p>{{ full_url }}</p>
+    <p>{{ short_url }}</p>
+{% endblock %}

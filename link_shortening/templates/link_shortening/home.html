@@ -1,0 +1,30 @@
+{% extends "account/base.html" %}
+{% block title %}Link shortening{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<style>
+    form{
+        width: 400px;
+        height: 400px;
+        background-color: rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        padding: 20px 0;
+    }
+    button{
+        margin-top: 20px;
+    }
+</style>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="full_url">
+    <button type="submit">submit</button>
+    <div>
+        <p>{{ full_url }}</p>
+        <p>{{ short_url }}</p>
+    </div>
+{% endif %}
+</form>
+{% endblock %}
